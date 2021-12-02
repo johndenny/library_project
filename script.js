@@ -42,7 +42,17 @@ function bookDisplay() {
         div.setAttribute('id', `book${i}`);
         div.innerHTML = `${myLibrary[i].title} ${myLibrary[i].author} ${myLibrary[i].pages} ${myLibrary[i].read}`;
         bookContainer.appendChild(div);
+        button = document.createElement('button');
+        button.setAttribute('id', 'eraseBtn');
+        button.setAttribute('onclick', `eraseBook(${i})`);
+        button.innerText = 'Erase';
+        div.appendChild(button);
     }
+}
+
+function eraseBook(index) {
+    myLibrary.splice(index,1);
+    bookDisplay();
 }
 
 function openForm() {
