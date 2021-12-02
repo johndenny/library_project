@@ -24,6 +24,7 @@ function addBookToLibrary() {
     myLibrary.push(newBook);
     document.getElementById('myForm').reset();
     bookDisplay();
+    closeForm();
     return false;
 }
 
@@ -42,4 +43,12 @@ function bookDisplay() {
         div.innerHTML = `${myLibrary[i].title} ${myLibrary[i].author} ${myLibrary[i].pages} ${myLibrary[i].read}`;
         bookContainer.appendChild(div);
     }
+}
+
+function openForm() {
+    document.getElementById('formPopUpContainer').style.display = 'flex';
+}
+
+function closeForm() {
+    document.getElementById('formPopUpContainer').style.display = 'none';
 }

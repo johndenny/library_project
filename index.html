@@ -8,20 +8,31 @@
 </head>
 <body>
 
-    <form id ="myForm">
-        <label>Title:</label><br>
-        <input id="bookTitle"/><br>
-        <label>Author:</label><br>
-        <input id="bookAuthor"/><br>
-        <label>Page Length:</label><br>
-        <input id="bookPages"/><br>
-        <label>Read?</label><br>
-        <input id="bookRead"/><br>
-        <input type="button" value="Submit" id="btnSubmit" onclick="addBookToLibrary()">
-    </form>
+    <button id='openFormBtn' onclick="openForm()">Add Book</button>
+
+    <div id="formPopUpContainer">
+
+        <div id="formPopUp">
+
+            <form id ="myForm">
+                <label>Title:</label><br>
+                <input id="bookTitle"/><br>
+                <label>Author:</label><br>
+                <input id="bookAuthor"/><br>
+                <label>Page Length:</label><br>
+                <input id="bookPages"/><br>
+                <label>Read?</label><br>
+                <input id="bookRead"/><br>
+                <input type="button" value="Submit" id="btnSubmit" onclick="addBookToLibrary()">
+                <input type="button" value="Close" id="btnClose" onclick="closeForm()">
+            </form>
+
+        </div>
     
+    </div>
+
     <div class="books">
-        
+
     </div>
        
 </body>
