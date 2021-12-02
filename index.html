@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <title>My Library</title>
+</head>
+<body>
+
+    <form id ="myForm">
+        <label>Title:</label><br>
+        <input id="bookTitle"/><br>
+        <label>Author:</label><br>
+        <input id="bookAuthor"/><br>
+        <label>Page Length:</label><br>
+        <input id="bookPages"/><br>
+        <label>Read?</label><br>
+        <input id="bookRead"/><br>
+        <input type="button" value="Submit" id="btnSubmit" onclick="addBookToLibrary()">
+    </form>
+    
+    <div class="books">
+        
+    </div>
+       
+</body>
+</html>
