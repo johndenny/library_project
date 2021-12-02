@@ -1,6 +1,40 @@
 body {
     margin: 0;
+    height: 100%;
 }
+
+div#theContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+div#backgroundContainer {
+    display: flex;
+    background: grey;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+div.books{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+div#bookCards {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    margin: 10px;
+    height: 200px;
+    background: lightgray;
+} 
 
 #formPopUpContainer {
     display: none;
@@ -10,7 +44,6 @@ body {
     position: fixed;
     top: 0;
     z-index: 500;
-
 }
 
 #formPopUp {
