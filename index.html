@@ -19,7 +19,10 @@
                 <label>Page Length:</label><br>
                 <input id="bookPages"/><br>
                 <label>Read?</label><br>
-                <input id="bookRead"/><br>
+                <label class="switch">
+                    <input id="bookRead" type="checkbox" value="Read">
+                    <span class="slider round"></span>
+                  </label><br>
                 <input type="button" value="Submit" id="btnSubmit" onclick="addBookToLibrary()">
                 <input type="button" value="Close" id="btnClose" onclick="closeForm()">
             </form>
@@ -29,15 +32,23 @@
     </div>
 
     <div id="theContainer">
+        
+        <div id="titleCntr">
+        </div>
 
         <div id="backgroundContainer">
-            
-            <button id='openFormBtn' onclick="openForm()">Add Book</button>
 
-            <div class="books">
+            <div id="addBookContainer">
             
+                <button id='openFormBtn' onclick="openForm()">+</button>
             </div>
             
+            <div class="books">
+                
+            </div>
+
+            
+
         </div>
 
     </div>
