@@ -1,35 +1,20 @@
-let myLibrary = [];
+myLibrary = [];
 
-function Book(title, author, pages, read) {
-    this.title = title
-    this.author = author
-    this.pages = pages
-    this.read = read
-    this.readSwitch = function() {
+class Book {
+    constructor(title, author, pages, read) {
+        this.title = title
+        this.author = author
+        this.pages = pages
+        this.read = read
+    }
+    
+    readSwitch () {
         this.read === 'Read' ? this.read = 'Reading' : this.read = 'Read';
         bookDisplay();
-    }
+    }  
 }
 
-const fillerBook1 = new Book('To Kill a Mocking Bird', 'Harper Lee', '336', 'Read');
-myLibrary.push(fillerBook1);
-const fillerBook2 = new Book('Pride and Prejudice', 'Jane Austen', '279', 'Reading');
-myLibrary.push(fillerBook2);
-const fillerBook3 = new Book('The Giving Tree', 'Shel Silverstien', '64', 'Read');
-myLibrary.push(fillerBook3);
-const fillerBook4 = new Book('Fahreheit 451', 'Ray Bradbury', '194', 'Read');
-myLibrary.push(fillerBook4);
-const fillerBook5 = new Book('Lord of the Flies', 'William Golding', '182', 'Read');
-myLibrary.push(fillerBook5);
-const fillerBook6 = new Book('The Stranger', 'Albert Camus', '123', 'Read');
-myLibrary.push(fillerBook6);
-const fillerBook7 = new Book('Goodnight Moon', 'Margaret Wise Brown', '32', 'Read');
-myLibrary.push(fillerBook7);
-const fillerBook8 = new Book('A Streetcar Named Desire', 'Tenesse Williams', '107', 'Read');
-myLibrary.push(fillerBook8);
-bookDisplay();
-
-function addBookToLibrary() {
+function add() {
     title = document.getElementById('bookTitle').value;
     author = document.getElementById('bookAuthor').value;
     pages = document.getElementById('bookPages').value;
@@ -48,7 +33,7 @@ function removeAllChildNodes(parent) {
         parent.removeChild(parent.firstChild);
     }
 }
-
+    
 function bookDisplay() {
     const bookContainer = document.querySelector('.books');
     removeAllChildNodes(bookContainer);
@@ -106,3 +91,25 @@ function openForm() {
 function closeForm() {
     document.getElementById('formPopUpContainer').style.display = 'none';
 }
+
+function fillerBooks() {
+    const fillerBook1 = new Book('To Kill a Mocking Bird', 'Harper Lee', '336', 'Read');
+    myLibrary.push(fillerBook1);
+    const fillerBook2 = new Book('Pride and Prejudice', 'Jane Austen', '279', 'Reading');
+    myLibrary.push(fillerBook2);
+    const fillerBook3 = new Book('The Giving Tree', 'Shel Silverstien', '64', 'Read');
+    myLibrary.push(fillerBook3);
+    const fillerBook4 = new Book('Fahreheit 451', 'Ray Bradbury', '194', 'Read');
+    myLibrary.push(fillerBook4);
+    const fillerBook5 = new Book('Lord of the Flies', 'William Golding', '182', 'Read');
+    myLibrary.push(fillerBook5);
+    const fillerBook6 = new Book('The Stranger', 'Albert Camus', '123', 'Read');
+    myLibrary.push(fillerBook6);
+    const fillerBook7 = new Book('Goodnight Moon', 'Margaret Wise Brown', '32', 'Read');
+    myLibrary.push(fillerBook7);
+    const fillerBook8 = new Book('A Streetcar Named Desire', 'Tenesse Williams', '107', 'Read');
+    myLibrary.push(fillerBook8);
+    bookDisplay();
+}
+
+fillerBooks();
