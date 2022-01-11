@@ -14,18 +14,35 @@ class Book {
     }  
 }
 
+
+function inputValidity(event) {
+    const error = event.target.nextElementSibling;
+    if (event.target.validity.valid) {
+        error.innerText = ''
+    } else {
+        error.innerText = 'Too Short'
+    }
+}
+
+[...document.querySelectorAll('.textInput')].forEach(element => element.addEventListener('blur', inputValidity));
+
 function add() {
-    title = document.getElementById('bookTitle').value;
-    author = document.getElementById('bookAuthor').value;
-    pages = document.getElementById('bookPages').value;
-    checkbox = document.getElementById('bookRead');
-    checkbox.checked === true ? read = checkbox.value : read = 'Reading';
-    newBook = new Book(title, author, pages, read);
-    myLibrary.push(newBook);
-    document.getElementById('myForm').reset();
-    bookDisplay();
-    closeForm();
-    return false;
+    if ([...document.querySelectorAll('.textInput')].every(element => element.validity.valid)) {
+        title = document.getElementById('bookTitle').value;
+        author = document.getElementById('bookAuthor').value;
+        pages = document.getElementById('bookPages').value;
+        checkbox = document.getElementById('bookRead');
+        checkbox.checked === true ? read = checkbox.value : read = 'Reading';
+        newBook = new Book(title, author, pages, read);
+        myLibrary.push(newBook);
+        document.getElementById('myForm').reset();
+        bookDisplay();
+        closeForm();
+    } else {
+        return false;
+    }
+
+
 }
 
 function removeAllChildNodes(parent) {

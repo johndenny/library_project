@@ -211,3 +211,12 @@ button#openFormBtn:active {
   .slider.round:before {
     border-radius: 50%;
   }
+
+  input:invalid {
+      border-color: #900;
+      background-color: #fdd;
+  }
+
+  input:focus:invalid {
+      outline: none;
+  }
