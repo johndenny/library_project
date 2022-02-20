@@ -1,0 +1,333 @@
+html,
+body {
+  margin: 0;
+  height: 100%;
+}
+
+button {
+  padding: 0;
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+p {
+  margin: 0;
+  color: rgb(115, 115, 115);
+}
+
+p#bookTitle {
+  margin: 0 10px;
+  font-size: 20px;
+}
+
+p#bookAuthor {
+  margin: 0 10px;
+  flex-grow: 1;
+}
+
+p#bookPages {
+  margin: 10px;
+}
+
+div#theContainer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100%;
+  width: 100%;
+}
+
+div#backgroundContainer {
+  display: flex;
+  background: rgb(245, 245, 245);
+  padding: 15px;
+  border-radius: 10px;
+  margin: 50px 100px;
+  min-width: 777px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+div.books {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+div.bookCards {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-bottom-color: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  background: rgb(235, 235, 235);
+  height: 200px;
+  width: 200px;
+}
+
+div#addBookContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+  gap: 0.5rem;
+}
+
+button#readBtn {
+  align-self: flex-end;
+}
+
+button#eraseBtn {
+  appearance: none;
+  align-self: flex-end;
+  padding: 0.25rem;
+  padding-bottom: 0;
+  border-radius: 1rem;
+  color: rgb(120, 120, 120);
+  background: rgb(235, 235, 235);
+}
+
+button#eraseBtn:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: rgb(100, 100, 100);
+}
+
+button#eraseBtn:active {
+  box-shadow: 0px 2px 1px rgb(175, 175, 175) inset;
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+div#readCntr {
+  display: flex;
+  align-items: center;
+  padding-right: 5px;
+}
+
+p#readText {
+  flex-grow: 1;
+  margin: 0 10px;
+  padding-bottom: 5px;
+}
+
+button#openFormBtn {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  border-color: rgb(245, 245, 245);
+  background: rgb(245, 245, 245);
+  color: rgb(120, 120, 120);
+}
+
+button#openFormBtn:hover {
+  background: rgb(235, 235, 235);
+  border-color: rgb(235, 235, 235);
+  color: rgb(100, 100, 100);
+}
+
+button#openFormBtn:active {
+  box-shadow: 0px 2px 1px rgb(215, 215, 215) inset;
+  background-color: rgba(0, 0, 0, 0.07);
+}
+
+#formPopUpContainer {
+  display: none;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.25);
+  position: fixed;
+  top: 0;
+  z-index: 500;
+}
+
+#formPopUp {
+  display: flex;
+  flex-direction: column;
+  background: rgb(235, 235, 235);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  margin: auto;
+  padding: 15px;
+  border-radius: 0.5rem;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 16px;
+  bottom: 0px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 14px;
+  width: 14px;
+  top: 1px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #5fcf14;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(25px);
+  -ms-transform: translateX(25px);
+  transform: translateX(25px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+input:invalid {
+  border-color: rgb(26, 153, 0);
+  background-color: rgb(221, 255, 226);
+}
+
+input:focus:invalid {
+  outline: none;
+}
+
+#sign-in svg {
+  opacity: 0.5;
+}
+
+#sign-out {
+  margin-top: auto;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+}
+
+#sign-out svg {
+  opacity: 0.5;
+}
+
+#sign-out:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+#user-pic {
+  width: 40px;
+  height: 40px;
+  background-size: 40px;
+  border-radius: 20px;
+}
+
+#user-name {
+  text-align: center;
+  opacity: 0.5;
+  font-size: 12px;
+}
+
+input#bookTitle,
+input#bookAuthor,
+input#bookPages,
+input#bookRead {
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 0.5rem;
+}
+
+form > label {
+  margin-left: 0.25rem;
+  margin-bottom: 0.1rem;
+  letter-spacing: 1px;
+}
+
+form#message-form {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+span.error {
+  font-size: 14px;
+  text-align: right;
+  color: red;
+  opacity: 0.75;
+  margin-bottom: 1rem;
+}
+
+button#submit,
+button#btnClose {
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  align-self: center;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  color: rgba(0, 0, 0, 0.75);
+  cursor: pointer;
+}
+
+button#submit:hover,
+button#btnClose:hover {
+  background-color: rgba(0, 0, 0, 0.75);
+  color: white;
+}
+
+button#submit:disabled:hover {
+  background-color: rgba(0, 0, 0, 0);
+  color: rgba(0, 0, 0, 0.15);
+}
+
+button#submit:disabled {
+  border-color: rgba(0, 0, 0, 0.15);
+  color: rgba(0, 0, 0, 0.15);
+  cursor: not-allowed;
+}
+
+.button-wrapper {
+  text-align: right;
+}
+
+.read-toggle-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.pages-text-wrapper {
+  margin: 0 10px;
+  color: rgba(0, 0, 0, 0.5);
+  margin-bottom: 0.25rem;
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="main.js" defer></script>
+    <title>My Library</title>
+</head>
+<body>
+    <div id="formPopUpContainer">
+
+        <div id="formPopUp">
+
+            <form id="message-form" action="#">
+                <label for="bookTitle">
+                    Title:
+                </label>
+                <input id="bookTitle" name="title" class="textInput" required minlength="1">
+                <span class="error"></span>
+                <label for="bookAuthor">
+                    Author:
+                </label>
+                <input id="bookAuthor" name="author" class="textInput" required minlength="1">
+                <span class="error"></span>
+                <label for="bookPages" >
+                    Page Length:
+                </label>
+                <input type="number" id="bookPages" name="pages" class="textInput" required minlength="1">
+                <span class="error"></span>
+                <label for="bookRead">
+                    Pages Read:
+                </label>
+                <input type="number" id="bookRead" name="pages-read" class="textInput" required minlength="1">
+                <span class="error"></span>
+                <div class="button-wrapper">
+                    <button id="submit" disabled type="submit" class='submit-button'>Save</button>
+                    <button type="button" value="Close" id="btnClose">Close</button>                    
+                </div>  
+            </form>
+
+        </div>
+            
+    </div>
+
+    <div id="theContainer">
+        
+        <div id="titleCntr">
+        </div>
+
+        <div id="backgroundContainer">
+
+            <div id="addBookContainer">
+                
+
+                <div hidden id="user-pic"></div>
+                <div hidden id="user-name"></div>
+                <button id="sign-in">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                    </svg>
+                </button>
+                <button id='openFormBtn'>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                        <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                    </svg>
+                </button>                
+                <button hidden id="sign-out">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-box-arrow-left" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0v2z"/>
+                        <path fill-rule="evenodd" d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z"/>
+                    </svg>
+                </button>
+                
+            </div>
+            
+            <div class="books">
+                
+            </div>
+
+            
+
+        </div>
+
+    </div>
+       
+</body>
+</html>

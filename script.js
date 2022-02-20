@@ -1,3 +1,17 @@
+import { initializeApp } from 'firebase/app';
+
+// TODO: Replace the following with your app's Firebase project configuration
+const firebaseConfig = {
+    apiKey: "AIzaSyCnuu5ryOCdldd0SmBEsZh9gUiZeV0xcp8",
+    authDomain: "library-78811.firebaseapp.com",
+    projectId: "library-78811",
+    storageBucket: "library-78811.appspot.com",
+    messagingSenderId: "505914469052",
+    appId: "1:505914469052:web:f14c0007d8e501ba967eb9"
+};
+
+const app = initializeApp(firebaseConfig);
+
 myLibrary = [];
 
 class Book {
